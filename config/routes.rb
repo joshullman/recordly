@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :users do
-	end
+  resources :users
+  resources :artists
+  resources :albums
+  resources :songs
 end
