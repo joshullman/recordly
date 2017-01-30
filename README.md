@@ -16,4 +16,5 @@ Future additions would be:
 - Testing to ensure the favoriting process is working properly
 - I've been spending a lot of time learning React lately and this would work well with shared states and such.
 - Adding authentication for devise
-- 
+- Adding sunspot for search functionality
+- Deploying to my VPS
