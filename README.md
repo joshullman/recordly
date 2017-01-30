@@ -12,5 +12,8 @@ Alright, I've reached a bit of a pivot point.  There's two directions I can take
 
 Favorites is also a concept I've been debating.  In my app Endorsesaurus I found myself in a similar debacle but I used what I call "cascading likes" which works but is a bit of a pain in the ass.  For instance, if I was to use cascading likes I would use a boolean field called "favorite" on the song migration.  If a user liked an album, it would find all of the songs associated with that album and "like" them.  If a user liked an artist, it would find every album, which would find every song etc.  It's a useful system because it cuts down on confusion in a database (for instance having a "like" for an artist, an album, and a song).  Now that I'm thinking about it though, I'm considering using a polymorphic to replace cascading likes.  It warrants more thought.
 
-I've been spending a lot of time learning React lately and this would work well with shared states and such.
-
+Future additions would be:
+- Testing to ensure the favoriting process is working properly
+- I've been spending a lot of time learning React lately and this would work well with shared states and such.
+- Adding authentication for devise
+- 
