@@ -2,7 +2,7 @@
 
 <h1><%= @user.email %></h1>
 
-<% if @favorite_artists %>
+<% if @favorite_artists.first %>
 	<table>
 	<h3>Favorite Artists</h3>
 	  <thead>
@@ -12,7 +12,8 @@
 	  </thead>
 
 	  <tbody>
-	    <% @favorte_artists.each do |artist| %>
+	    <% @favorite_artists.each do |favorite| %>
+	    <% artist = favorite.find_associated_media %>
 	      <tr>
 	        <td><%= link_to artist.title, user_artist_path(current_user, artist) %></td>
 	      </tr>
@@ -23,7 +24,7 @@
 <% end %>
 
 <br> 
-<% if @favorite_albums %>
+<% if @favorite_albums.first %>
 	<table>
 	<h3>Favorite Albums</h3>
 	  <thead>
@@ -34,7 +35,8 @@
 	  </thead>
 
 	  <tbody>
-	    <% @favorte_albums.each do |album| %>
+	    <% @favorite_albums.each do |favorite| %>
+	    	<% album = favorite.find_associated_media %>
 	      <tr>
 	      	<td><%= link_to album.artist.name, user_artist_path(current_user, album.artist) %></td>
 	        <td><%= link_to album.title, user_album_path(current_user, album) %></td>
@@ -46,7 +48,7 @@
 <% end %>
 
 <br> 
-<% if @favorite_songs %>
+<% if @favorite_songs.first %>
 	<table>
 	<h3>Favorite Songs</h3>
 	  <thead>
@@ -58,10 +60,11 @@
 	  </thead>
 
 	  <tbody>
-	    <% @favorte_songs.each do |song| %>
+	    <% @favorite_songs.each do |favorite| %>
+	    	<% song = favorite.find_associated_media %>
 	      <tr>
 	        <td><%= link_to song.title, user_song_path(current_user, song) %></td>
-	        <td><%= link_to album.title, user_album_path(current_user, song.album) %></td>
+	        <td><%= link_to song.album.title, user_album_path(current_user, song.album) %></td>
 	        <td><%= link_to song.album.artist.name, user_artist_path(current_user, song.album.artist) %></td>
 	      </tr>
 	    <% end %>
