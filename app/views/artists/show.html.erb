@@ -12,6 +12,10 @@
 <%= render partial: 'layouts/all_albums', locals: { user: current_user, albums: @albums } %>
 
 </table>
+<br>
+<%= link_to 'New Album', new_user_album_path(current_user) %>
+<br>
+<br>
 
 <%= link_to 'Edit', edit_user_artist_path(@artist) %> |
 <%= link_to 'Back', user_artists_path %>

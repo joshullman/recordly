@@ -1,5 +1,5 @@
 <h1>New Song</h1>
 
-<%= render 'form', song: @song %>
+<%= render partial:'form', locals: { user: current_user, song: @song, album: @album } %>
 
 <%= link_to 'Back', user_songs_path(current_user) %>
