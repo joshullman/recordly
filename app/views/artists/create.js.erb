@@ -1,3 +1,1 @@
-$('.create-artist').bind('ajax:success', function() {
-   $(this).closest('tr').fadeIn();
-});
+$("<%= escape_javascript(render @artist) %>").appendTo('.artists-list');

@@ -9,7 +9,7 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody class='artists-list'>
     <% @artists.each do |artist| %>
       <tr>
         <td><%= link_to artist.name, user_artist_path(current_user, artist) %></td>
@@ -22,9 +22,5 @@
 </table>
 
 <br>
-
-<button class="new-artist">
-  Create Artist
-</button>
 
 <%= render partial: 'form', locals: {user: current_user, artist: Artist.new}, remote: true, class: 'create-artist' %>
