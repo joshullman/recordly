@@ -11,7 +11,7 @@
     </div>
   <% end %>
   <div>
-    <%= f.text_field :album_id %>
+    <%= hidden_field_tag :album_id, album.id %>
     <%= f.text_field :title %>
     <%= f.submit %>
   </div>

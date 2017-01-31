@@ -16,17 +16,20 @@ class AlbumsController < ApplicationController
   # GET /albums/new
   def new
     @album = Album.new
+    @artist = Artist.find(params[:artist])
   end
 
   # GET /albums/1/edit
   def edit
+    @artist = Artist.find(params[:artist])
   end
 
   # POST /albums
   # POST /albums.json
   def create
     p params
-    @artist = params[:artist_id]
+    @artist = Artist.find(params[:artist_id])
+    p @artist
     @album = Album.new(user_id: params[:user_id], artist_id: params[:artist_id], title: params[:album][:title])
 
     respond_to do |format|
@@ -44,7 +47,7 @@ class AlbumsController < ApplicationController
   # PATCH/PUT /albums/1.json
   def update
     respond_to do |format|
-      if @album.update(user_id: params[:user_id], artist_id: params[:artist], title: params[:album][:title])
+      if @album.update(user_id: params[:user_id], artist_id: params[:artist_id], title: params[:album][:title])
         format.html { redirect_to user_album_path(current_user, @album), notice: 'Album was successfully updated.' }
         format.json { render :show, status: :ok, location: @album }
       else
