@@ -18,4 +18,6 @@ Rails.application.routes.draw do
 	  resources :songs
 	end
 
+  resources :favorites
+
 end

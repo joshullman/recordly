@@ -55,11 +55,11 @@ class ArtistsController < ApplicationController
 
   private
     def find_artist_favorites
-      @favorites = Favorites.where(user_id: current_user.id, favoriteable_type: "Artist")
+      @favorites = Favorite.where(user_id: current_user.id, favoriteable_type: "Artist")
     end
 
     def find_album_favorites
-      @favorites = Favorites.where(user_id: current_user.id, favoriteable_type: "Album")
+      @favorites = Favorite.where(user_id: current_user.id, favoriteable_type: "Album")
     end
 
     def set_artist

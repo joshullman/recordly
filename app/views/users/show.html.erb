@@ -1,31 +1,73 @@
 <p id="notice"><%= notice %></p>
 
 <h1><%= @user.email %></h1>
-<h3>Favorites</h3>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-    </tr>
-  </thead>
+<% if @favorite_artists %>
+	<table>
+	<h3>Favorite Artists</h3>
+	  <thead>
+	    <tr>
+	      <th>Name</th>
+	    </tr>
+	  </thead>
 
-  <tbody>
-    <% @songs.each do |song| %>
-      <tr>
-        <td><%= link_to song.title, user_song_path(current_user, song) %></td>
-        <td><%= link_to 'Edit', edit_user_song_path(current_user, song, album: @album) %></td>
-        <td><%= link_to 'Destroy', user_song_path(current_user, song), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+	  <tbody>
+	    <% @favorte_artists.each do |artist| %>
+	      <tr>
+	        <td><%= link_to artist.title, user_artist_path(current_user, artist) %></td>
+	      </tr>
+	    <% end %>
+	  </tbody>
 
-</table>
+	</table>
+<% end %>
 
 <br> 
-<%= link_to 'New Song', new_user_song_path(current_user, album: @album) %>
-<br>
-<br>
+<% if @favorite_albums %>
+	<table>
+	<h3>Favorite Albums</h3>
+	  <thead>
+	    <tr>
+	      <th>Artist</th>
+	      <th>Title</th>
+	    </tr>
+	  </thead>
 
-<%= link_to 'Edit', edit_user_album_path(current_user, @album, artist: @album.artist) %> |
-<%= link_to 'Back', user_albums_path(current_user) %>
+	  <tbody>
+	    <% @favorte_albums.each do |album| %>
+	      <tr>
+	      	<td><%= link_to album.artist.name, user_artist_path(current_user, album.artist) %></td>
+	        <td><%= link_to album.title, user_album_path(current_user, album) %></td>
+	      </tr>
+	    <% end %>
+	  </tbody>
+
+	</table>
+<% end %>
+
+<br> 
+<% if @favorite_songs %>
+	<table>
+	<h3>Favorite Songs</h3>
+	  <thead>
+	    <tr>
+	      <th>Title</th>
+	      <th>Album</th>
+	      <th>Artist</th>
+	    </tr>
+	  </thead>
+
+	  <tbody>
+	    <% @favorte_songs.each do |song| %>
+	      <tr>
+	        <td><%= link_to song.title, user_song_path(current_user, song) %></td>
+	        <td><%= link_to album.title, user_album_path(current_user, song.album) %></td>
+	        <td><%= link_to song.album.artist.name, user_artist_path(current_user, song.album.artist) %></td>
+	      </tr>
+	    <% end %>
+	  </tbody>
+
+	</table>
+<% end %>
+
+<br> 

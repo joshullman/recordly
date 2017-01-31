@@ -55,7 +55,7 @@ class SongsController < ApplicationController
 
   private
     def find_song_favorites
-      @favorites = Favorites.where(user_id: current_user.id, favoriteable_type: "Song")
+      @favorites = Favorite.where(user_id: current_user.id, favoriteable_type: "Song")
     end
 
     def set_song
