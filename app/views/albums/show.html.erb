@@ -27,5 +27,5 @@
 <br>
 <br>
 
-<%= link_to 'Edit', edit_user_album_path(current_user, @album) %> |
+<%= link_to 'Edit', edit_user_album_path(current_user, @album, artist: @album.artist) %> |
 <%= link_to 'Back', user_albums_path(current_user) %>
