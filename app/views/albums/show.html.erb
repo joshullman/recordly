@@ -16,6 +16,7 @@
         <td><%= link_to song.title, user_song_path(current_user, song) %></td>
         <td><%= link_to 'Edit', edit_user_song_path(current_user, song, album: @album) %></td>
         <td><%= link_to 'Destroy', user_song_path(current_user, song), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= render partial: "layouts/favorite", locals: {user: current_user, media: song} %></td>
       </tr>
     <% end %>
   </tbody>

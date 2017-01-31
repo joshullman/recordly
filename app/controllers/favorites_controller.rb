@@ -9,8 +9,7 @@ class FavoritesController < ApplicationController
 			when "Song"
 				media = Song.find(params[:media_id])
 		end
-		media.favorites.create(user_id: current_user)
-		media.favorites.where(user_id: current_user).first.save
+		media.favorites.create!(user_id: current_user.id)
 		p media
 		p media.favorites
 		redirect_to user_path(current_user)

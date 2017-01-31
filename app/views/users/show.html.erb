@@ -15,7 +15,7 @@
 	    <% @favorite_artists.each do |favorite| %>
 	    <% artist = favorite.find_associated_media %>
 	      <tr>
-	        <td><%= link_to artist.title, user_artist_path(current_user, artist) %></td>
+	        <td><%= link_to artist.name, user_artist_path(current_user, artist) %></td>
 	      </tr>
 	    <% end %>
 	  </tbody>
