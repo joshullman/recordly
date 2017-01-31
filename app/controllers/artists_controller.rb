@@ -26,9 +26,12 @@ class ArtistsController < ApplicationController
       if @artist.save
         format.html { redirect_to user_artists_url(current_user), notice: 'Artist was successfully created.' }
         format.json { render :show, status: :created, location: @artist }
+        format.js   { render :layout => false }
+
       else
         format.html { render :new }
         format.json { render json: @artist.errors, status: :unprocessable_entity }
+        format.js   { render :layout => false }
       end
     end
   end
@@ -50,6 +53,7 @@ class ArtistsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to user_artists_url(current_user), notice: 'Artist was successfully destroyed.' }
       format.json { head :no_content }
+      format.js   { render :layout => false }
     end
   end
 

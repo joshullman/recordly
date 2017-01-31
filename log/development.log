@@ -5897,3 +5897,397 @@ Processing by ArtistsController#show as HTML
 Completed 200 OK in 36ms (Views: 28.8ms | ActiveRecord: 1.7ms)
 
 
+Started GET "/users/1/artists" for 127.0.0.1 at 2017-01-31 15:01:41 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ArtistsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1[0m  [["favoriteable_id", 1], ["favoriteable_type", "Artist"]]
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT  "favorites".* FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1 ORDER BY "favorites"."id" ASC LIMIT $3[0m  [["favoriteable_id", 1], ["favoriteable_type", "Artist"], ["LIMIT", 1]]
+  Rendered layouts/_favorite.html.erb (24.5ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1[0m  [["favoriteable_id", 2], ["favoriteable_type", "Artist"]]
+  Rendered layouts/_favorite.html.erb (2.3ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1[0m  [["favoriteable_id", 3], ["favoriteable_type", "Artist"]]
+  Rendered layouts/_favorite.html.erb (2.5ms)
+  Rendered artists/_form.html.erb (16.8ms)
+  Rendered artists/index.html.erb within layouts/application (63.6ms)
+Completed 500 Internal Server Error in 271ms (ActiveRecord: 7.7ms)
+
+
+  
+ActionView::Template::Error (Asset was not declared to be precompiled in production.
+Add `Rails.application.config.assets.precompile += %w( jquery.js )` to `config/initializers/assets.rb` and restart your server):
+     6: 
+     7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag "jquery", "application" %>
+    10:   </head>
+    11: 
+    12:   <body>
+  
+app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb___1934818465099925230_70232014423440'
+  Rendering /Users/TheOscitator/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/TheOscitator/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/TheOscitator/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.6ms)
+  Rendering /Users/TheOscitator/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/TheOscitator/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /Users/TheOscitator/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/TheOscitator/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/TheOscitator/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (51.9ms)
+Started GET "/users/1/artists" for 127.0.0.1 at 2017-01-31 15:02:30 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ArtistsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1[0m  [["favoriteable_id", 1], ["favoriteable_type", "Artist"]]
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT  "favorites".* FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1 ORDER BY "favorites"."id" ASC LIMIT $3[0m  [["favoriteable_id", 1], ["favoriteable_type", "Artist"], ["LIMIT", 1]]
+  Rendered layouts/_favorite.html.erb (17.9ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1[0m  [["favoriteable_id", 2], ["favoriteable_type", "Artist"]]
+  Rendered layouts/_favorite.html.erb (1.9ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1[0m  [["favoriteable_id", 3], ["favoriteable_type", "Artist"]]
+  Rendered layouts/_favorite.html.erb (1.4ms)
+  Rendered artists/_form.html.erb (11.4ms)
+  Rendered artists/index.html.erb within layouts/application (49.2ms)
+  Rendered devise/menu/_registration_items.html.erb (0.7ms)
+  Rendered devise/menu/_login_items.html.erb (0.5ms)
+Completed 200 OK in 273ms (Views: 235.5ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/users/1/artists" for 127.0.0.1 at 2017-01-31 15:06:06 -0800
+Processing by ArtistsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1[0m  [["favoriteable_id", 1], ["favoriteable_type", "Artist"]]
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT  "favorites".* FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1 ORDER BY "favorites"."id" ASC LIMIT $3[0m  [["favoriteable_id", 1], ["favoriteable_type", "Artist"], ["LIMIT", 1]]
+  Rendered layouts/_favorite.html.erb (3.1ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1[0m  [["favoriteable_id", 2], ["favoriteable_type", "Artist"]]
+  Rendered layouts/_favorite.html.erb (1.6ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1[0m  [["favoriteable_id", 3], ["favoriteable_type", "Artist"]]
+  Rendered layouts/_favorite.html.erb (1.2ms)
+  Rendered artists/_form.html.erb (0.9ms)
+  Rendered artists/index.html.erb within layouts/application (12.0ms)
+  Rendered devise/menu/_registration_items.html.erb (0.3ms)
+  Rendered devise/menu/_login_items.html.erb (0.2ms)
+Completed 200 OK in 29ms (Views: 25.2ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/users/1/artists/3" for 127.0.0.1 at 2017-01-31 15:07:48 -0800
+Processing by ArtistsController#destroy as JS
+  Parameters: {"user_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "artists" WHERE "artists"."id" = $1[0m  [["id", 3]]
+  [1m[35m (15.9ms)[0m  [1m[35mCOMMIT[0m
+  Rendering artists/destroy.js.erb
+  Rendered artists/destroy.js.erb (0.3ms)
+Completed 200 OK in 47ms (Views: 3.7ms | ActiveRecord: 20.2ms)
+
+
+Started GET "/users/1/artists" for 127.0.0.1 at 2017-01-31 15:07:55 -0800
+Processing by ArtistsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1[0m  [["favoriteable_id", 1], ["favoriteable_type", "Artist"]]
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT  "favorites".* FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1 ORDER BY "favorites"."id" ASC LIMIT $3[0m  [["favoriteable_id", 1], ["favoriteable_type", "Artist"], ["LIMIT", 1]]
+  Rendered layouts/_favorite.html.erb (8.8ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1[0m  [["favoriteable_id", 2], ["favoriteable_type", "Artist"]]
+  Rendered layouts/_favorite.html.erb (1.8ms)
+  Rendered artists/_form.html.erb (1.3ms)
+  Rendered artists/index.html.erb within layouts/application (16.2ms)
+  Rendered devise/menu/_registration_items.html.erb (0.4ms)
+  Rendered devise/menu/_login_items.html.erb (0.3ms)
+Completed 200 OK in 39ms (Views: 29.9ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/users/1/artists" for 127.0.0.1 at 2017-01-31 15:08:48 -0800
+Processing by ArtistsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1[0m  [["favoriteable_id", 1], ["favoriteable_type", "Artist"]]
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT  "favorites".* FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1 ORDER BY "favorites"."id" ASC LIMIT $3[0m  [["favoriteable_id", 1], ["favoriteable_type", "Artist"], ["LIMIT", 1]]
+  Rendered layouts/_favorite.html.erb (9.6ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1[0m  [["favoriteable_id", 2], ["favoriteable_type", "Artist"]]
+  Rendered layouts/_favorite.html.erb (1.9ms)
+  Rendered artists/_form.html.erb (1.5ms)
+  Rendered artists/index.html.erb within layouts/application (21.4ms)
+  Rendered devise/menu/_registration_items.html.erb (0.4ms)
+  Rendered devise/menu/_login_items.html.erb (0.3ms)
+Completed 200 OK in 56ms (Views: 33.8ms | ActiveRecord: 5.6ms)
+
+
+Started POST "/users/1/artists" for 127.0.0.1 at 2017-01-31 15:08:53 -0800
+Processing by ArtistsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kofWJuTdQSeeSj9SNI3bP4of2RGd/KTX0neRotAd9oUUMfdTC+rcj0MmzB5vVLuoCwV5fyD+GBTPF+OTsOuxDg==", "artist"=>{"name"=>"merlerky"}, "commit"=>"Create Artist", "user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "artists" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "merlerky"], ["user_id", 1], ["created_at", 2017-01-31 23:08:53 UTC], ["updated_at", 2017-01-31 23:08:53 UTC]]
+  [1m[35m (16.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/1/artists
+Completed 302 Found in 22ms (ActiveRecord: 17.0ms)
+
+
+Started GET "/users/1/artists" for 127.0.0.1 at 2017-01-31 15:08:53 -0800
+Processing by ArtistsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1[0m  [["favoriteable_id", 1], ["favoriteable_type", "Artist"]]
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT  "favorites".* FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1 ORDER BY "favorites"."id" ASC LIMIT $3[0m  [["favoriteable_id", 1], ["favoriteable_type", "Artist"], ["LIMIT", 1]]
+  Rendered layouts/_favorite.html.erb (3.2ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1[0m  [["favoriteable_id", 2], ["favoriteable_type", "Artist"]]
+  Rendered layouts/_favorite.html.erb (1.5ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1[0m  [["favoriteable_id", 5], ["favoriteable_type", "Artist"]]
+  Rendered layouts/_favorite.html.erb (1.2ms)
+  Rendered artists/_form.html.erb (0.9ms)
+  Rendered artists/index.html.erb within layouts/application (12.2ms)
+  Rendered devise/menu/_registration_items.html.erb (0.4ms)
+  Rendered devise/menu/_login_items.html.erb (0.3ms)
+Completed 200 OK in 29ms (Views: 25.8ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/users/1/artists/5" for 127.0.0.1 at 2017-01-31 15:09:00 -0800
+Processing by ArtistsController#destroy as JS
+  Parameters: {"user_id"=>"1", "id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "artists" WHERE "artists"."id" = $1[0m  [["id", 5]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  Rendering artists/destroy.js.erb
+  Rendered artists/destroy.js.erb (0.3ms)
+Completed 200 OK in 6ms (Views: 1.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/1/artists" for 127.0.0.1 at 2017-01-31 15:11:06 -0800
+Processing by ArtistsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1[0m  [["favoriteable_id", 1], ["favoriteable_type", "Artist"]]
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT  "favorites".* FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1 ORDER BY "favorites"."id" ASC LIMIT $3[0m  [["favoriteable_id", 1], ["favoriteable_type", "Artist"], ["LIMIT", 1]]
+  Rendered layouts/_favorite.html.erb (9.3ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1[0m  [["favoriteable_id", 2], ["favoriteable_type", "Artist"]]
+  Rendered layouts/_favorite.html.erb (1.9ms)
+  Rendered artists/_form.html.erb (1.5ms)
+  Rendered artists/index.html.erb within layouts/application (21.2ms)
+  Rendered devise/menu/_registration_items.html.erb (0.5ms)
+  Rendered devise/menu/_login_items.html.erb (0.4ms)
+Completed 200 OK in 68ms (Views: 41.3ms | ActiveRecord: 6.3ms)
+
+
+Started POST "/users/1/artists" for 127.0.0.1 at 2017-01-31 15:11:12 -0800
+Processing by ArtistsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wXqZVrfOAlwEY1AkssZ7w1GzNMkT7CIf35JfTL2ndDBHzLgjWPmf9NkPo2jpHxtU0KmUp67untzC8i193VEzuw==", "artist"=>{"name"=>"merlerky"}, "commit"=>"Create Artist", "user_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "artists" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "merlerky"], ["user_id", 1], ["created_at", 2017-01-31 23:11:12 UTC], ["updated_at", 2017-01-31 23:11:12 UTC]]
+  [1m[35m (15.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/1/artists
+Completed 302 Found in 28ms (ActiveRecord: 16.0ms)
+
+
+Started GET "/users/1/artists" for 127.0.0.1 at 2017-01-31 15:11:12 -0800
+Processing by ArtistsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1[0m  [["favoriteable_id", 1], ["favoriteable_type", "Artist"]]
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT  "favorites".* FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1 ORDER BY "favorites"."id" ASC LIMIT $3[0m  [["favoriteable_id", 1], ["favoriteable_type", "Artist"], ["LIMIT", 1]]
+  Rendered layouts/_favorite.html.erb (3.1ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1[0m  [["favoriteable_id", 2], ["favoriteable_type", "Artist"]]
+  Rendered layouts/_favorite.html.erb (1.5ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1[0m  [["favoriteable_id", 6], ["favoriteable_type", "Artist"]]
+  Rendered layouts/_favorite.html.erb (1.4ms)
+  Rendered artists/_form.html.erb (1.0ms)
+  Rendered artists/index.html.erb within layouts/application (12.6ms)
+  Rendered devise/menu/_registration_items.html.erb (0.3ms)
+  Rendered devise/menu/_login_items.html.erb (0.3ms)
+Completed 200 OK in 30ms (Views: 26.5ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "/users/1/artists/6" for 127.0.0.1 at 2017-01-31 15:11:16 -0800
+Processing by ArtistsController#destroy as JS
+  Parameters: {"user_id"=>"1", "id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "artists" WHERE "artists"."id" = $1[0m  [["id", 6]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  Rendering artists/destroy.js.erb
+  Rendered artists/destroy.js.erb (0.3ms)
+Completed 200 OK in 6ms (Views: 2.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/1/artists" for 127.0.0.1 at 2017-01-31 15:11:24 -0800
+Processing by ArtistsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1[0m  [["favoriteable_id", 1], ["favoriteable_type", "Artist"]]
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT  "favorites".* FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1 ORDER BY "favorites"."id" ASC LIMIT $3[0m  [["favoriteable_id", 1], ["favoriteable_type", "Artist"], ["LIMIT", 1]]
+  Rendered layouts/_favorite.html.erb (2.8ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1[0m  [["favoriteable_id", 2], ["favoriteable_type", "Artist"]]
+  Rendered layouts/_favorite.html.erb (1.4ms)
+  Rendered artists/_form.html.erb (0.9ms)
+  Rendered artists/index.html.erb within layouts/application (9.4ms)
+  Rendered devise/menu/_registration_items.html.erb (0.4ms)
+  Rendered devise/menu/_login_items.html.erb (0.6ms)
+Completed 200 OK in 29ms (Views: 25.5ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/users/1/artists" for 127.0.0.1 at 2017-01-31 15:11:31 -0800
+Processing by ArtistsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RvklTsrbG1wUf8OBkOPd49hR/zQHnn7MXc1Qv9GrnJTATwQ7JeyG9MkTMM3LOr10WUtfWrqcwg9ArSKOsV3bHw==", "artist"=>{"name"=>"merlerky"}, "commit"=>"Create Artist", "user_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "artists" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "merlerky"], ["user_id", 1], ["created_at", 2017-01-31 23:11:31 UTC], ["updated_at", 2017-01-31 23:11:31 UTC]]
+  [1m[35m (15.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/1/artists
+Completed 302 Found in 20ms (ActiveRecord: 16.1ms)
+
+
+Started GET "/users/1/artists" for 127.0.0.1 at 2017-01-31 15:11:31 -0800
+Processing by ArtistsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1[0m  [["favoriteable_id", 1], ["favoriteable_type", "Artist"]]
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT  "favorites".* FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1 ORDER BY "favorites"."id" ASC LIMIT $3[0m  [["favoriteable_id", 1], ["favoriteable_type", "Artist"], ["LIMIT", 1]]
+  Rendered layouts/_favorite.html.erb (2.7ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1[0m  [["favoriteable_id", 2], ["favoriteable_type", "Artist"]]
+  Rendered layouts/_favorite.html.erb (1.5ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1[0m  [["favoriteable_id", 7], ["favoriteable_type", "Artist"]]
+  Rendered layouts/_favorite.html.erb (1.4ms)
+  Rendered artists/_form.html.erb (0.9ms)
+  Rendered artists/index.html.erb within layouts/application (11.8ms)
+  Rendered devise/menu/_registration_items.html.erb (0.3ms)
+  Rendered devise/menu/_login_items.html.erb (0.4ms)
+Completed 200 OK in 31ms (Views: 27.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users/1/artists" for 127.0.0.1 at 2017-01-31 15:12:32 -0800
+Processing by ArtistsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1[0m  [["favoriteable_id", 1], ["favoriteable_type", "Artist"]]
+  [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT  "favorites".* FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1 ORDER BY "favorites"."id" ASC LIMIT $3[0m  [["favoriteable_id", 1], ["favoriteable_type", "Artist"], ["LIMIT", 1]]
+  Rendered layouts/_favorite.html.erb (3.2ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1[0m  [["favoriteable_id", 2], ["favoriteable_type", "Artist"]]
+  Rendered layouts/_favorite.html.erb (1.6ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1[0m  [["favoriteable_id", 7], ["favoriteable_type", "Artist"]]
+  Rendered layouts/_favorite.html.erb (1.4ms)
+  Rendered artists/_form.html.erb (1.0ms)
+  Rendered artists/index.html.erb within layouts/application (12.5ms)
+  Rendered devise/menu/_registration_items.html.erb (0.4ms)
+  Rendered devise/menu/_login_items.html.erb (0.5ms)
+Completed 200 OK in 31ms (Views: 27.0ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/users/1/artists" for 127.0.0.1 at 2017-01-31 15:12:37 -0800
+Processing by ArtistsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fnfOa4Pg3UIooM6Kr3FwfoMiy/gQ5wzlO8RD7oBM/vj4we8ebNdA6vXMPcb0qBDpAjhrlq3lsCYmpDHf4Lq5cw==", "artist"=>{"name"=>"smook"}, "commit"=>"Create Artist", "user_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "artists" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "smook"], ["user_id", 1], ["created_at", 2017-01-31 23:12:37 UTC], ["updated_at", 2017-01-31 23:12:37 UTC]]
+  [1m[35m (15.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/1/artists
+Completed 302 Found in 20ms (ActiveRecord: 16.0ms)
+
+
+Started GET "/users/1/artists" for 127.0.0.1 at 2017-01-31 15:12:37 -0800
+Processing by ArtistsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1[0m  [["favoriteable_id", 1], ["favoriteable_type", "Artist"]]
+  [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT  "favorites".* FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1 ORDER BY "favorites"."id" ASC LIMIT $3[0m  [["favoriteable_id", 1], ["favoriteable_type", "Artist"], ["LIMIT", 1]]
+  Rendered layouts/_favorite.html.erb (3.2ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1[0m  [["favoriteable_id", 2], ["favoriteable_type", "Artist"]]
+  Rendered layouts/_favorite.html.erb (1.3ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1[0m  [["favoriteable_id", 7], ["favoriteable_type", "Artist"]]
+  Rendered layouts/_favorite.html.erb (1.4ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1[0m  [["favoriteable_id", 8], ["favoriteable_type", "Artist"]]
+  Rendered layouts/_favorite.html.erb (1.3ms)
+  Rendered artists/_form.html.erb (0.9ms)
+  Rendered artists/index.html.erb within layouts/application (14.6ms)
+  Rendered devise/menu/_registration_items.html.erb (0.3ms)
+  Rendered devise/menu/_login_items.html.erb (0.3ms)
+Completed 200 OK in 32ms (Views: 28.4ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/users/1/artists/8" for 127.0.0.1 at 2017-01-31 15:12:47 -0800
+Processing by ArtistsController#destroy as JS
+  Parameters: {"user_id"=>"1", "id"=>"8"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "artists" WHERE "artists"."id" = $1[0m  [["id", 8]]
+  [1m[35m (16.0ms)[0m  [1m[35mCOMMIT[0m
+  Rendering artists/destroy.js.erb
+  Rendered artists/destroy.js.erb (0.3ms)
+Completed 200 OK in 21ms (Views: 1.9ms | ActiveRecord: 16.6ms)
+
+
+Started GET "/users/1/artists" for 127.0.0.1 at 2017-01-31 15:12:53 -0800
+Processing by ArtistsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1[0m  [["favoriteable_id", 1], ["favoriteable_type", "Artist"]]
+  [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT  "favorites".* FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1 ORDER BY "favorites"."id" ASC LIMIT $3[0m  [["favoriteable_id", 1], ["favoriteable_type", "Artist"], ["LIMIT", 1]]
+  Rendered layouts/_favorite.html.erb (4.1ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1[0m  [["favoriteable_id", 2], ["favoriteable_type", "Artist"]]
+  Rendered layouts/_favorite.html.erb (1.7ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1[0m  [["favoriteable_id", 7], ["favoriteable_type", "Artist"]]
+  Rendered layouts/_favorite.html.erb (1.5ms)
+  Rendered artists/_form.html.erb (1.0ms)
+  Rendered artists/index.html.erb within layouts/application (15.5ms)
+  Rendered devise/menu/_registration_items.html.erb (0.3ms)
+  Rendered devise/menu/_login_items.html.erb (0.3ms)
+Completed 200 OK in 33ms (Views: 28.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/1/artists" for 127.0.0.1 at 2017-01-31 15:15:04 -0800
+Processing by ArtistsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1[0m  [["favoriteable_id", 1], ["favoriteable_type", "Artist"]]
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT  "favorites".* FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1 ORDER BY "favorites"."id" ASC LIMIT $3[0m  [["favoriteable_id", 1], ["favoriteable_type", "Artist"], ["LIMIT", 1]]
+  Rendered layouts/_favorite.html.erb (2.8ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1[0m  [["favoriteable_id", 2], ["favoriteable_type", "Artist"]]
+  Rendered layouts/_favorite.html.erb (8.7ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."favoriteable_id" = $1 AND "favorites"."favoriteable_type" = $2 AND "favorites"."user_id" = 1[0m  [["favoriteable_id", 7], ["favoriteable_type", "Artist"]]
+  Rendered layouts/_favorite.html.erb (1.4ms)
+  Rendered artists/_form.html.erb (1.0ms)
+  Rendered artists/index.html.erb within layouts/application (19.0ms)
+  Rendered devise/menu/_registration_items.html.erb (0.4ms)
+  Rendered devise/menu/_login_items.html.erb (0.3ms)
+Completed 200 OK in 37ms (Views: 33.5ms | ActiveRecord: 1.3ms)
+
+

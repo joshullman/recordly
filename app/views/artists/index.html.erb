@@ -14,7 +14,7 @@
       <tr>
         <td><%= link_to artist.name, user_artist_path(current_user, artist) %></td>
         <td><%= link_to 'Edit', edit_user_artist_path(current_user, artist) %></td>
-        <td><%= link_to 'Destroy', user_artist_path(current_user, artist), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', user_artist_path(current_user, artist), method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: 'delete-artist' %></td>
         <td><%= render partial: "layouts/favorite", locals: {user: current_user, media: artist} %></td>
       </tr>
     <% end %>
@@ -23,4 +23,8 @@
 
 <br>
 
-<%= render partial: 'form', locals: {user: current_user, artist: Artist.new} %>
+<button class="new-artist">
+  Create Artist
+</button>
+
+<%= render partial: 'form', locals: {user: current_user, artist: Artist.new}, remote: true, class: 'create-artist' %>
