@@ -25,11 +25,13 @@ class AlbumsController < ApplicationController
   # POST /albums
   # POST /albums.json
   def create
-    @album = Album.new(album_params)
+    p params
+    @artist = params[:artist_id]
+    @album = Album.new(user_id: params[:user_id], artist_id: params[:artist_id], title: params[:album][:title])
 
     respond_to do |format|
       if @album.save
-        format.html { redirect_to @album, notice: 'Album was successfully created.' }
+        format.html { redirect_to user_album_path(current_user, @album), notice: 'Album was successfully created.' }
         format.json { render :show, status: :created, location: @album }
       else
         format.html { render :new }
@@ -42,8 +44,8 @@ class AlbumsController < ApplicationController
   # PATCH/PUT /albums/1.json
   def update
     respond_to do |format|
-      if @album.update(album_params)
-        format.html { redirect_to @album, notice: 'Album was successfully updated.' }
+      if @album.update(user_id: params[:user_id], artist_id: params[:artist], title: params[:album][:title])
+        format.html { redirect_to user_album_path(current_user, @album), notice: 'Album was successfully updated.' }
         format.json { render :show, status: :ok, location: @album }
       else
         format.html { render :edit }
@@ -57,7 +59,7 @@ class AlbumsController < ApplicationController
   def destroy
     @album.destroy
     respond_to do |format|
-      format.html { redirect_to albums_url, notice: 'Album was successfully destroyed.' }
+      format.html { redirect_to user_albums_url(current_user), notice: 'Album was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
