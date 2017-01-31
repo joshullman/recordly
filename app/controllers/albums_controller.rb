@@ -27,9 +27,7 @@ class AlbumsController < ApplicationController
   # POST /albums
   # POST /albums.json
   def create
-    p params
     @artist = Artist.find(params[:artist_id])
-    p @artist
     @album = Album.new(user_id: params[:user_id], artist_id: params[:artist_id], title: params[:album][:title])
 
     respond_to do |format|
