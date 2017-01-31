@@ -2,5 +2,5 @@
 
 <%= render 'form', artist: @artist %>
 
-<%= link_to 'Show', @artist %> |
-<%= link_to 'Back', artists_path %>
+<%= link_to 'Show', user_artist_path(current_user, @artist) %> |
+<%= link_to 'Back', user_artists_path(current_user) %>

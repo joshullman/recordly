@@ -9,6 +9,11 @@
   </head>
 
   <body>
+  	<% if current_user %>
+			<%= link_to "Artists", user_artists_path(current_user) %>
+			<%= link_to "Albums", user_albums_path(current_user) %>
+			<%= link_to "Songs", user_songs_path(current_user) %>
+  	<% end %>
     <%= yield %>
   </body>
 </html>
