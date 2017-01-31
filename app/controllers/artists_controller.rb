@@ -26,7 +26,7 @@ class ArtistsController < ApplicationController
   # POST /artists
   # POST /artists.json
   def create
-    @artist = Artist.new(user_id: params[:user_id], name: params[:artist]["name"] )
+    @artist = Artist.new(user_id: params[:user_id], name: params[:artist][:name] )
 
     respond_to do |format|
       if @artist.save
@@ -43,7 +43,7 @@ class ArtistsController < ApplicationController
   # PATCH/PUT /artists/1.json
   def update
     respond_to do |format|
-      if @artist.update(user_id: params[:user_id], name: params[:artist].name )
+      if @artist.update(user_id: params[:user_id], name: params[:artist][:name] )
         format.html { redirect_to user_artist_path(current_user, @artist), notice: 'Artist was successfully updated.' }
         format.json { render :show, status: :ok, location: @artist }
       else

@@ -24,7 +24,7 @@ class SongsController < ApplicationController
   # POST /songs
   # POST /songs.json
   def create
-    @song = Song.new(song_params)
+    @song = Song.new(user_id: params[:user_id], album_id: params[:song][:album_id], title: params[:song][:title])
 
     respond_to do |format|
       if @song.save
@@ -41,7 +41,7 @@ class SongsController < ApplicationController
   # PATCH/PUT /songs/1.json
   def update
     respond_to do |format|
-      if @song.update(song_params)
+      if @song.update(user_id: params[:user_id], album_id: params[:song][:album_id], title: params[:song][:title])
         format.html { redirect_to user_song_path(current_user, @song), notice: 'Song was successfully updated.' }
         format.json { render :show, status: :ok, location: @song }
       else

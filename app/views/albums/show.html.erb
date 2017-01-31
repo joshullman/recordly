@@ -10,7 +10,15 @@
     </tr>
   </thead>
 
-<%= render partial: 'layouts/all_songs', locals: { user: current_user, songs: @songs } %>
+  <tbody>
+    <% @songs.each do |song| %>
+      <tr>
+        <td><%= link_to song.title, user_song_path(current_user, song) %></td>
+        <td><%= link_to 'Edit', edit_user_song_path(current_user, song) %></td>
+        <td><%= link_to 'Destroy', user_song_path(current_user, song), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
 
 </table>
 

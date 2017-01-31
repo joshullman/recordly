@@ -1,6 +1,6 @@
 <h1>Editing Song</h1>
 
-<%= render 'form', song: @song %>
+<%= render partial: 'form', locals: {user: current_user, song: @song} %>
 
 <%= link_to 'Show', user_song_path(current_user, @song) %> |
 <%= link_to 'Back', user_songs_path(current_user) %>
