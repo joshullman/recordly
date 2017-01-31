@@ -1,3 +1,31 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_user_path(@user) %>
+<h1><%= @user.email %></h1>
+<h3>Favorites</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @songs.each do |song| %>
+      <tr>
+        <td><%= link_to song.title, user_song_path(current_user, song) %></td>
+        <td><%= link_to 'Edit', edit_user_song_path(current_user, song, album: @album) %></td>
+        <td><%= link_to 'Destroy', user_song_path(current_user, song), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>
+
+<br> 
+<%= link_to 'New Song', new_user_song_path(current_user, album: @album) %>
+<br>
+<br>
+
+<%= link_to 'Edit', edit_user_album_path(current_user, @album, artist: @album.artist) %> |
+<%= link_to 'Back', user_albums_path(current_user) %>

@@ -2,6 +2,7 @@ class SongsController < ApplicationController
   before_action :set_song, only: [:show, :edit, :update, :destroy]
 
   def index
+    find_song_favorites
     @songs = Song.all
   end
 
@@ -53,6 +54,10 @@ class SongsController < ApplicationController
   end
 
   private
+    def find_song_favorites
+      @favorites = Favorites.where(user_id: current_user.id, favoriteable_type: "Song")
+    end
+
     def set_song
       @song = Song.find(params[:id])
     end

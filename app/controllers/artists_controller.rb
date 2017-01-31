@@ -2,10 +2,12 @@ class ArtistsController < ApplicationController
   before_action :set_artist, only: [:show, :edit, :update, :destroy]
 
   def index
+    find_artist_favorites
     @artists = Artist.all
   end
 
   def show
+    find_album_favorites
     @albums = @artist.albums
     @album = Album.new
   end
@@ -52,6 +54,14 @@ class ArtistsController < ApplicationController
   end
 
   private
+    def find_artist_favorites
+      @favorites = Favorites.where(user_id: current_user.id, favoriteable_type: "Artist")
+    end
+
+    def find_album_favorites
+      @favorites = Favorites.where(user_id: current_user.id, favoriteable_type: "Album")
+    end
+
     def set_artist
       @artist = Artist.find(params[:id])
     end

@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     else
       @user = User.find(params[:id])
     end
+    @favorites = @user.favorites
   end
 
   private

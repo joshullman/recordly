@@ -2,6 +2,7 @@ class AlbumsController < ApplicationController
   before_action :set_album, only: [:show, :edit, :update, :destroy]
 
   def index
+    find_album_favorites
     @albums = Album.all
   end
 
@@ -54,6 +55,14 @@ class AlbumsController < ApplicationController
   end
 
   private
+    def find_album_favorites
+      @favorites = Favorites.where(user_id: current_user.id, favoriteable_type: "Album")
+    end
+
+    def find_song_favorites
+      @favorites = Favorites.where(user_id: current_user.id, favoriteable_type: "Song")
+    end
+
     def set_album
       @album = Album.find(params[:id])
     end
