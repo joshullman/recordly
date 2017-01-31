@@ -24,7 +24,7 @@ class ArtistsController < ApplicationController
 
     respond_to do |format|
       if @artist.save
-        format.html { redirect_to user_artist_path(current_user, @artist), notice: 'Artist was successfully created.' }
+        format.html { redirect_to user_artists_url(current_user), notice: 'Artist was successfully created.' }
         format.json { render :show, status: :created, location: @artist }
       else
         format.html { render :new }

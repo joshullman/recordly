@@ -23,4 +23,4 @@
 
 <br>
 
-<%= link_to 'New Artist', new_user_artist_path %>
+<%= render partial: 'form', locals: {user: current_user, artist: Artist.new} %>
