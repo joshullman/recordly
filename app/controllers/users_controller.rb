@@ -8,7 +8,6 @@ class UsersController < ApplicationController
     end
   end
 
-
   private
     def user_params
       params.fetch(:user, {})
