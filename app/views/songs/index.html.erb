@@ -2,6 +2,13 @@
 
 <h1>Songs</h1>
 
+<%= form_tag user_songs_path(current_user), :method => :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :title => nil %>
+  </p>
+<% end %>
+
 <table>
   <thead>
     <tr>

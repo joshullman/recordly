@@ -3,7 +3,7 @@ class ArtistsController < ApplicationController
 
   def index
     find_artist_favorites
-    @artists = Artist.all
+    @artists = Artist.search(params[:search])
   end
 
   def show

@@ -1,6 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <h1>All Artists</h1>
+<%= form_tag user_artists_path(current_user), :method => :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
 
 <table>
   <thead>

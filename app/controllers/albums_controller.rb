@@ -3,7 +3,7 @@ class AlbumsController < ApplicationController
 
   def index
     find_album_favorites
-    @albums = Album.all
+    @albums = Album.search(params[:search])
   end
 
   def show
